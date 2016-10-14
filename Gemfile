@@ -27,6 +27,7 @@ end
 # CUSTOM GEMS
 gem 'haml', '~> 4.0', '>= 4.0.7'
 gem 'simple_form', '~> 3.3', '>= 3.3.1'
-gem 'devise', '~> 4.2'
+gem 'devise', git: 'git://github.com/plataformatec/devise.git'
 gem 'paperclip', '~> 5.1'
+gem 'image_magick', '~> 0.1.9'
 
