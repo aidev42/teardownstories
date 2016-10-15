@@ -1,5 +1,11 @@
 - @posts.each do |post|
   = link_to (image_tag post.image.url(:small)), post
   %h2= link_to post.title, post
+  %p
+    = post.comments.count
+    Comments
+  %p
+    = post.get_upvotes.size
+    Votes
 
 = link_to "Add Your Story", new_post_path
