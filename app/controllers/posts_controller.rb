@@ -3,11 +3,13 @@ class PostsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
 
   def index
+    # try to update this to sort by upvotes, not easy to do since the votable gem does not actually add votes to the post schema
     @posts = Post.all.order("created_at DESC")
   end
 
   def show
     @comments = Comment.where(post_id: @post)
+    @random_post = Post.where.not(id: @post).order("RANDOM()").first
   end
 
   def new
